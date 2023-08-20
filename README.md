@@ -1,7 +1,7 @@
 # AIX-administration-guide
 
 
-## SMITToolToaddcreateuserandloginviassh
+## SMIT Tool To add create user and login via ssh
 
 **Command:** smitmkuser
 
@@ -17,7 +17,7 @@ Logindirectlyintotheserverwithuser“subesh”viaSSH.
 WelcometoAIXserver
 
 
-## SetupLocalrepoandinstallyumpackagemanageronRHEL
+## Setup Local repo and install yum packagemanager on RHEL
 
 Gettheisofileontherootdirectory.Createdirectory/media/RHEL-disc
 **Command:** root@lastvirus/]#mkdir/media/RHEL-disc
