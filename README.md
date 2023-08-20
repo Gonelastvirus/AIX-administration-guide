@@ -37,7 +37,7 @@ Ifnoerrorsarereturned,thefollowingcanbeusedtoupdate:
 **Command:** yumrepolist
 
 
-## LogicalVolumeManagementusingSMIT
+## Logical Volume Management using SMIT
 
 Listphysicalvolume:
 **Command:** lspv
@@ -53,7 +53,7 @@ Setvolumegroupname
 ● PhysicalpartitionsizeinMegaBytes.PressEscand 4 andselectpartitionsize.
 ● SetPhysicalvolumename.Forexamplehdisk0,hdisk
 ```
-### CreatelogicalvolumeusingSMT
+### Create logical volume using SMT
 **Command:** smitlv
 SelectAddLogicalvolutionoption
 
@@ -71,7 +71,7 @@ ConfirmLVexistonLVgroup
 Example:lsvg-ldatavg
 
 
-### CreateaFilesystemtoaccesslogicalvolume
+### Create a File system to access logical volume
 
 **Command:** smitfs
 SelectAddchange/showfilesystem.
@@ -87,13 +87,13 @@ Nowmountthe/testfs
 **Command:** /testfs
 
 
-## ShowFilesystem.
+## Show Filesystem.
 
 **Command:** df-g
 
 ### ListPhysicalvolume
 
-## UnderstandingPartitiononAIX
+## Understanding Partition on AIX
 
 Letusconsideranemptylandwhichisyourphysicalharddisk.Supposeyouboughttheland
 andassignyournameonitwhichisbasicallyyourvolumegroup.Onthatlandyoulayoutyour
@@ -101,7 +101,7 @@ house design, some spacewill be bedroom, bathroom and hall etcwhichis basicallyy
 Logicalvolume(LV).NowyouassignthefilesystemtothoseLogicalvolumes(LV).
 
 
-## RemoveLVandFSfromthevolumegroup
+## Remove LV and FS from the volume group
 
 Unmountfirst.Makesureyouarenotinthatfilesystem.Sogoonrootfirst.
 **Command:** unmountfs_name
@@ -109,7 +109,7 @@ Example:unmount/testfs
 **Command:** rmfs/testfs
 Nowourlogicalvolumeandfilesystemgotdeleted.
 
-## RemoveVolumegroups
+## Remove Volume groups
 
 Showdisk
 #lspv
@@ -119,7 +119,7 @@ Flags:
 -d:device
 -f:forcefully
 
-## RemovePhysicalvolume(Disk)
+## Remove Physical volume(Disk)
 
 Basicallydeletehdisk1,hdisk0etc
 **Command:** #rmdev-Rdlhdisk
@@ -132,7 +132,7 @@ removed.
 ● -lflag:Specifiesthatthedevicetoberemovedisidentifiedbyitslogicalname.
 
 
-## BasicAIXCommand
+## Basic AIX Command
 
 #oslevel-s:Thisconfirmswearerunning AIXversion7.2orsomethingelse.
 #uname-awecanseeserverisAIX,namegivenisAIX
@@ -144,10 +144,10 @@ removed.
 #shutdown-F-r:RestartingAIXServer.Flags:-FmeansForcefully,-rflag:Thisflaginstructs
 thesystemtorestartautomaticallyaftershuttingdown.
 
-### MonitorSystemPerformancewithTOPAS
+### Monitor System Performance with TOPAS
 
 
-## WhatDoesitmeanwhentheloadaverageis444?
+## What Does it mean when the load average is 444?
 
 Whentheloadaverageisdisplayedas"4 4 4,"itmeansthatonaverage,therearefourprocesses
 activelyusingorwaitingfortheCPUduringeachofthethreetimeintervals.Thissuggestsa
@@ -165,7 +165,7 @@ CPUutilization,butthesignificanceofthisvaluedependsonthenumberofCPUcoresavailabl
 onthesystemandthespecificworkloadbeingprocessed.
 
 
-## InstallSuperuserdo(SUDO)onAIX
+## Install Super user do(SUDO) on AIX
 
 Mounttheisoorextractthe.tar.gzfileintothepath.
 **Command:**
@@ -173,7 +173,7 @@ loopmount -i ESD-Toolbox_for_Linux_Apps_Common_7.1-7.3_122022_LCD4107737.iso -o
 "-Vudfs-oro"-m/mnt
 
 
-## visudoandUserPrivilege
+## vi sudo and User Privilege
 
 **Command:** visudo
 Getintothesudoersfilewithvieditor.
@@ -186,7 +186,7 @@ runcommandsasanyuser.
 ● "ALL":Thefinal"ALL"signifiesthattheuser"subesh"canrunanycommand.
 
 
-## RootAssign“subesh”UserRolestochangeotherUsersPassword
+## Root Assign “subesh” User Roles to change other Users Password
 
 Gotopath/etc/security/roles
 Command:vi/etc/security/roles
@@ -223,7 +223,7 @@ rolesandisthereforethemostpowerfulroleonthesystem.SomeISSOresponsibilitiesinclud
 Moredetails:https://www.ibm.com/docs/en/aix/7.2?topic=roles-predefined
 
 
-## ConfigureNFSinAI
+## Configure NFS in AIX
 
 ChecktherunningNFSservices.
 **Command:** lssrc-a|grepnfs
@@ -246,7 +246,7 @@ Ontheclientside.Installnfs
 **Command:** sudoaptinstallnfs-common
 
 
-## ConfiguringSecureShell(SSH)forAIX
+## Configuring Secure Shell (SSH) for AIX
 
 Open the /etc/ssh/sshd_config file on the AIX server where you want to install Network
 Manager.
@@ -257,7 +257,7 @@ UseLoginyes
 2. YoucannowuseSSHtoaccesstheserverandinstallNetworkManager.
 
 
-## errptCommand
+## errpt Command
 
 Generatesareportofloggederrors.
 **Flags:**
@@ -279,7 +279,7 @@ AlsoonTimestampletssay0614034923,itislike 06 meansmonth(june) 14 means(june14)
 
 
 
-## ConnectCiscoSwitchorRouterviaConsoleCable
+## Connect Cisco Switch or Router via Console Cable
 1. Youneedaserialcable.Rj45toRS232orRJ45toUSB.
 2. PluginthemaleRJ45toCISCOswitchandanotherUSBmalesidetoyourlaptop.
 Nowyoucanuseaminicomtoolorputtytocommunicatewithaswitch.Ifyouareawindow
@@ -301,7 +301,7 @@ You shouldnowbein theminicomterminalwindow,youwillbe connectedtothedevice's
 command-lineinterface.Youcannowentercommandstoconfigurethedevice.
 
 
-## ConfigureNTPserverandClient
+## Configure NTP server and Client
 
 VerifythatyouhaveasuitableNTPserver.Enter:
 **Command:** lssrc-lsxntpd
@@ -331,7 +331,7 @@ Confirmbycommand‘date’.
 takeupto 12 minutes.
 
 
-## BackuprootvgbycreatingLVonVIOS
+## Backup rootvg by creating LV on VIOS
 
 UploadAIXupdatefileonAIXserver(testserver1).Path:/tmp/
 
