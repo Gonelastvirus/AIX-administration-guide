@@ -1,33 +1,7 @@
 # AIX-administration-guide
-## Table of Content
-
-- SMITToolToaddcreateuserandloginviassh..................................................................
-- SetupLocalrepoandinstallyumpackagemanageronRHEL...........................................
-- LogicalVolumeManagementusingSMIT..........................................................................
-   - CreateVolumegroup:.....................................................................................................
-   - CreatelogicalvolumeusingSMT..................................................................................
-   - CreateaFilesystemtoaccesslogicalvolume...............................................................
-   - ListPhysicalvolume....................................................................................................
-- UnderstandingPartitiononAIX........................................................................................
-- RemoveLVandFSfromthevolumegroup......................................................................
-- RemoveVolumegroups.....................................................................................................
-- RemovePhysicalvolume(Disk).......................................................................................
-- BasicAIXCommand.........................................................................................................
-   - MonitorSystemPerformancewithTOPAS.................................................................
-- WhatDoesitmeanwhentheloadaverageis444?...........................................................
-- InstallSuperuserdo(SUDO)onAIX................................................................................
-- visudoandUserPrivilege..................................................................................................
-- RootAssign“subesh”UserRolestochangeotherUsersPassword.................................
-- ConfigureNFSinAIX.......................................................................................................
-- ConfiguringSecureShell(SSH)forAIX..........................................................................
-- errptCommand..................................................................................................................
-- ConnectCiscoSwitchorRouterviaConsoleCable............................................
-- ConfigureNTPserverandClient....................................................................................
-- BackuprootvgbycreatingLVonVIOS.......................................................................................
 
 
-
-## SMITToolToaddcreateuserandloginviassh..................................................................
+## SMITToolToaddcreateuserandloginviassh
 
 **Command:** smitmkuser
 
@@ -43,7 +17,7 @@ Logindirectlyintotheserverwithuser“subesh”viaSSH.
 WelcometoAIXserver
 
 
-## SetupLocalrepoandinstallyumpackagemanageronRHEL...........................................
+## SetupLocalrepoandinstallyumpackagemanageronRHEL
 
 Gettheisofileontherootdirectory.Createdirectory/media/RHEL-disc
 **Command:** root@lastvirus/]#mkdir/media/RHEL-disc
@@ -63,12 +37,12 @@ Ifnoerrorsarereturned,thefollowingcanbeusedtoupdate:
 **Command:** yumrepolist
 
 
-## LogicalVolumeManagementusingSMIT..........................................................................
+## LogicalVolumeManagementusingSMIT
 
 Listphysicalvolume:
 **Command:** lspv
 
-### CreateVolumegroup:.....................................................................................................
+### CreateVolumegroup:
 
 **Command:** smitvg
 
@@ -79,8 +53,7 @@ Setvolumegroupname
 ● PhysicalpartitionsizeinMegaBytes.PressEscand 4 andselectpartitionsize.
 ● SetPhysicalvolumename.Forexamplehdisk0,hdisk
 ```
-### CreatelogicalvolumeusingSMT..................................................................................
-
+### CreatelogicalvolumeusingSMT
 **Command:** smitlv
 SelectAddLogicalvolutionoption
 
@@ -98,7 +71,7 @@ ConfirmLVexistonLVgroup
 Example:lsvg-ldatavg
 
 
-### CreateaFilesystemtoaccesslogicalvolume...............................................................
+### CreateaFilesystemtoaccesslogicalvolume
 
 **Command:** smitfs
 SelectAddchange/showfilesystem.
@@ -118,10 +91,9 @@ Nowmountthe/testfs
 
 **Command:** df-g
 
-### ListPhysicalvolume....................................................................................................
+### ListPhysicalvolume
 
-
-## UnderstandingPartitiononAIX........................................................................................
+## UnderstandingPartitiononAIX
 
 Letusconsideranemptylandwhichisyourphysicalharddisk.Supposeyouboughttheland
 andassignyournameonitwhichisbasicallyyourvolumegroup.Onthatlandyoulayoutyour
@@ -129,7 +101,7 @@ house design, some spacewill be bedroom, bathroom and hall etcwhichis basicallyy
 Logicalvolume(LV).NowyouassignthefilesystemtothoseLogicalvolumes(LV).
 
 
-## RemoveLVandFSfromthevolumegroup......................................................................
+## RemoveLVandFSfromthevolumegroup
 
 Unmountfirst.Makesureyouarenotinthatfilesystem.Sogoonrootfirst.
 **Command:** unmountfs_name
@@ -137,7 +109,7 @@ Example:unmount/testfs
 **Command:** rmfs/testfs
 Nowourlogicalvolumeandfilesystemgotdeleted.
 
-## RemoveVolumegroups.....................................................................................................
+## RemoveVolumegroups
 
 Showdisk
 #lspv
@@ -147,7 +119,7 @@ Flags:
 -d:device
 -f:forcefully
 
-## RemovePhysicalvolume(Disk).......................................................................................
+## RemovePhysicalvolume(Disk)
 
 Basicallydeletehdisk1,hdisk0etc
 **Command:** #rmdev-Rdlhdisk
@@ -160,7 +132,7 @@ removed.
 ● -lflag:Specifiesthatthedevicetoberemovedisidentifiedbyitslogicalname.
 
 
-## BasicAIXCommand.........................................................................................................
+## BasicAIXCommand
 
 #oslevel-s:Thisconfirmswearerunning AIXversion7.2orsomethingelse.
 #uname-awecanseeserverisAIX,namegivenisAIX
@@ -172,10 +144,10 @@ removed.
 #shutdown-F-r:RestartingAIXServer.Flags:-FmeansForcefully,-rflag:Thisflaginstructs
 thesystemtorestartautomaticallyaftershuttingdown.
 
-### MonitorSystemPerformancewithTOPAS.................................................................
+### MonitorSystemPerformancewithTOPAS
 
 
-## WhatDoesitmeanwhentheloadaverageis444?...........................................................
+## WhatDoesitmeanwhentheloadaverageis444?
 
 Whentheloadaverageisdisplayedas"4 4 4,"itmeansthatonaverage,therearefourprocesses
 activelyusingorwaitingfortheCPUduringeachofthethreetimeintervals.Thissuggestsa
@@ -193,7 +165,7 @@ CPUutilization,butthesignificanceofthisvaluedependsonthenumberofCPUcoresavailabl
 onthesystemandthespecificworkloadbeingprocessed.
 
 
-## InstallSuperuserdo(SUDO)onAIX................................................................................
+## InstallSuperuserdo(SUDO)onAIX
 
 Mounttheisoorextractthe.tar.gzfileintothepath.
 **Command:**
@@ -201,7 +173,7 @@ loopmount -i ESD-Toolbox_for_Linux_Apps_Common_7.1-7.3_122022_LCD4107737.iso -o
 "-Vudfs-oro"-m/mnt
 
 
-## visudoandUserPrivilege..................................................................................................
+## visudoandUserPrivilege
 
 **Command:** visudo
 Getintothesudoersfilewithvieditor.
@@ -214,7 +186,7 @@ runcommandsasanyuser.
 ● "ALL":Thefinal"ALL"signifiesthattheuser"subesh"canrunanycommand.
 
 
-## RootAssign“subesh”UserRolestochangeotherUsersPassword.................................
+## RootAssign“subesh”UserRolestochangeotherUsersPassword
 
 Gotopath/etc/security/roles
 Command:vi/etc/security/roles
@@ -251,7 +223,7 @@ rolesandisthereforethemostpowerfulroleonthesystem.SomeISSOresponsibilitiesinclud
 Moredetails:https://www.ibm.com/docs/en/aix/7.2?topic=roles-predefined
 
 
-## ConfigureNFSinAIX.......................................................................................................
+## ConfigureNFSinAI
 
 ChecktherunningNFSservices.
 **Command:** lssrc-a|grepnfs
@@ -274,7 +246,7 @@ Ontheclientside.Installnfs
 **Command:** sudoaptinstallnfs-common
 
 
-## ConfiguringSecureShell(SSH)forAIX..........................................................................
+## ConfiguringSecureShell(SSH)forAIX
 
 Open the /etc/ssh/sshd_config file on the AIX server where you want to install Network
 Manager.
@@ -285,7 +257,7 @@ UseLoginyes
 2. YoucannowuseSSHtoaccesstheserverandinstallNetworkManager.
 
 
-## errptCommand..................................................................................................................
+## errptCommand
 
 Generatesareportofloggederrors.
 **Flags:**
@@ -307,8 +279,7 @@ AlsoonTimestampletssay0614034923,itislike 06 meansmonth(june) 14 means(june14)
 
 
 
-## ConnectCiscoSwitchorRouterviaConsoleCable............................................
-
+## ConnectCiscoSwitchorRouterviaConsoleCable
 1. Youneedaserialcable.Rj45toRS232orRJ45toUSB.
 2. PluginthemaleRJ45toCISCOswitchandanotherUSBmalesidetoyourlaptop.
 Nowyoucanuseaminicomtoolorputtytocommunicatewithaswitch.Ifyouareawindow
@@ -330,7 +301,7 @@ You shouldnowbein theminicomterminalwindow,youwillbe connectedtothedevice's
 command-lineinterface.Youcannowentercommandstoconfigurethedevice.
 
 
-## ConfigureNTPserverandClient....................................................................................
+## ConfigureNTPserverandClient
 
 VerifythatyouhaveasuitableNTPserver.Enter:
 **Command:** lssrc-lsxntpd
@@ -360,7 +331,7 @@ Confirmbycommand‘date’.
 takeupto 12 minutes.
 
 
-## BackuprootvgbycreatingLVonVIOS.......................................................................................
+## BackuprootvgbycreatingLVonVIOS
 
 UploadAIXupdatefileonAIXserver(testserver1).Path:/tmp/
 
