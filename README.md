@@ -1,4 +1,4 @@
-# AIX-administration-guide
+# AIX-Administration-Guide
 
 
 ## SMIT Tool To add create user and login via ssh
